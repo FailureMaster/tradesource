@@ -11,7 +11,7 @@ use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Laramin\Utility\VugiChugi;
+// use Laramin\Utility\VugiChugi;
 
 class SystemController extends Controller
 {
