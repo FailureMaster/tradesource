@@ -492,14 +492,14 @@
                 </li>
                 @endif
                 
-                @if(can_access('logo-favicon'))
-                <li class="sidebar-menu-item {{menuActive('admin.setting.logo.icon')}}">
-                    <a href="{{route('admin.setting.logo.icon')}}" class="nav-link">
-                        <i class="menu-icon las la-images"></i>
-                        <span class="menu-title">@lang('Logo & Favicon')</span>
-                    </a>
-                </li>
-                @endif
+                <!--@if(can_access('logo-favicon'))-->
+                <!--<li class="sidebar-menu-item {{menuActive('admin.setting.logo.icon')}}">-->
+                <!--    <a href="{{route('admin.setting.logo.icon')}}" class="nav-link">-->
+                <!--        <i class="menu-icon las la-images"></i>-->
+                <!--        <span class="menu-title">@lang('Logo & Favicon')</span>-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--@endif-->
                 
                  @if(can_access('language'))
                     <li class="sidebar-menu-item  {{menuActive(['admin.language.manage','admin.language.key'])}}">
@@ -519,42 +519,42 @@
                     </a>
                 </li>
                 @endif
-                @if(can_access('notification-setting'))
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a href="javascript:void(0)" class="{{menuActive('admin.setting.notification*',3)}}">
-                        <i class="menu-icon las la-bell"></i>
-                        <span class="menu-title">@lang('Notification Setting')</span>
-                    </a>
-                    <div class="sidebar-submenu {{menuActive('admin.setting.notification*',2)}} ">
-                        <ul>
-                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.global')}} ">
-                                <a href="{{route('admin.setting.notification.global')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Global Template')</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.email')}} ">
-                                <a href="{{route('admin.setting.notification.email')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Email Setting')</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.sms')}} ">
-                                <a href="{{route('admin.setting.notification.sms')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('SMS Setting')</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.templates')}} ">
-                                <a href="{{route('admin.setting.notification.templates')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Notification Templates')</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                @endif
+                <!--@if(can_access('notification-setting'))-->
+                <!--<li class="sidebar-menu-item sidebar-dropdown">-->
+                <!--    <a href="javascript:void(0)" class="{{menuActive('admin.setting.notification*',3)}}">-->
+                <!--        <i class="menu-icon las la-bell"></i>-->
+                <!--        <span class="menu-title">@lang('Notification Setting')</span>-->
+                <!--    </a>-->
+                <!--    <div class="sidebar-submenu {{menuActive('admin.setting.notification*',2)}} ">-->
+                <!--        <ul>-->
+                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.global')}} ">-->
+                <!--                <a href="{{route('admin.setting.notification.global')}}" class="nav-link">-->
+                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
+                <!--                    <span class="menu-title">@lang('Global Template')</span>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.email')}} ">-->
+                <!--                <a href="{{route('admin.setting.notification.email')}}" class="nav-link">-->
+                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
+                <!--                    <span class="menu-title">@lang('Email Setting')</span>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.sms')}} ">-->
+                <!--                <a href="{{route('admin.setting.notification.sms')}}" class="nav-link">-->
+                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
+                <!--                    <span class="menu-title">@lang('SMS Setting')</span>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.templates')}} ">-->
+                <!--                <a href="{{route('admin.setting.notification.templates')}}" class="nav-link">-->
+                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
+                <!--                    <span class="menu-title">@lang('Notification Templates')</span>-->
+                <!--                </a>-->
+                <!--            </li>-->
+                <!--        </ul>-->
+                <!--    </div>-->
+                <!--</li>-->
+                <!--@endif-->
 
                 
                 @if(can_access('manage-section'))
@@ -583,50 +583,28 @@
                 </li>
                 @endif
 
-                @if(can_access('manage-templates|manage-pages|manage-section'))
-                    <li class="sidebar__menu-header">@lang('Frontend Manager')</li>
-                @endif
+                <!--@if(can_access('maintenance-mode|gdpr-cookie|system|custom-css|report-request'))-->
+                <!--<li class="sidebar__menu-header">@lang('Extra')</li>-->
+                <!--@endif-->
 
-                @if(can_access('manage-section'))
-                <li class="sidebar-menu-item sidebar-dropdown">
-                    <a href="javascript:void(0)" class="{{menuActive('admin.frontend.sections*',3)}}">
-                        <i class="menu-icon la la-puzzle-piece"></i>
-                        <span class="menu-title">@lang('Manage Section')</span>
-                    </a>
-                    <div class="sidebar-submenu {{menuActive('admin.frontend.sections*',2)}} ">
-                        <ul>
-                            @php
-                            $lastSegment = collect(request()->segments())->last();
-                            @endphp
-                            @foreach(getPageSections(true) as $k => $secs)
-                            @if($secs['builder'])
-                            <li class="sidebar-menu-item {{ $lastSegment == $k ? 'active' : '' }} ">
-                                <a href="{{ route('admin.frontend.sections',$k) }}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">{{__($secs['name'])}}</span>
-                                </a>
-                            </li>
-                            @endif
-                            @endforeach
-                        </ul>
-                    </div>
-                </li>
-            @endif
-
-                @if(can_access('maintenance-mode|gdpr-cookie|system|custom-css|report-request'))
-                <li class="sidebar__menu-header">@lang('Extra')</li>
-                @endif
-
-                @if(can_access('maintenance-mode'))
-                <li class="sidebar-menu-item {{menuActive('admin.maintenance.mode')}}">
-                    <a href="{{route('admin.maintenance.mode')}}" class="nav-link">
-                        <i class="menu-icon las la-robot"></i>
-                        <span class="menu-title">@lang('Maintenance Mode')</span>
-                    </a>
-                </li>
-                @endif
+                <!--@if(can_access('maintenance-mode'))-->
+                <!--<li class="sidebar-menu-item {{menuActive('admin.maintenance.mode')}}">-->
+                <!--    <a href="{{route('admin.maintenance.mode')}}" class="nav-link">-->
+                <!--        <i class="menu-icon las la-robot"></i>-->
+                <!--        <span class="menu-title">@lang('Maintenance Mode')</span>-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--@endif-->
+                <!--@if(can_access('gdpr-cookie'))-->
+                <!--<li class="sidebar-menu-item {{menuActive('admin.setting.cookie')}}">-->
+                <!--    <a href="{{route('admin.setting.cookie')}}" class="nav-link">-->
+                <!--        <i class="menu-icon las la-cookie-bite"></i>-->
+                <!--        <span class="menu-title">@lang('GDPR Cookie')</span>-->
+                <!--    </a>-->
+                <!--</li>-->
+                <!--@endif-->
                 @if(can_access('system'))
-                <!-- <li class="sidebar-menu-item sidebar-dropdown">
+                <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="{{menuActive('admin.system*',3)}}">
                         <i class="menu-icon la la-server"></i>
                         <span class="menu-title">@lang('System')</span>
@@ -653,7 +631,7 @@
                             </li>
                         </ul>
                     </div>
-                </li> -->
+                </li> 
                 @endif
                
             </ul>
