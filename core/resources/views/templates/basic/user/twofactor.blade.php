@@ -9,11 +9,12 @@
             </div>
             <div class="card-body">
                 <h6 class="mb-3">
-                    @lang('Use the QR code or setup key on your Google Authenticator app to add your account. ')
+                    @lang('Setup key on your Google Authenticator app to add your account. ')
+                    {{-- @lang('Use the QR code or setup key on your Google Authenticator app to add your account. ') --}}
                 </h6>
-                <div class="form-group mx-auto text-center">
+                {{-- <div class="form-group mx-auto text-center">
                     <img class="mx-auto" src="{{$qrCodeUrl}}">
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label class="form-label">@lang('Setup Key')</label>
                     <div class="input-group">
