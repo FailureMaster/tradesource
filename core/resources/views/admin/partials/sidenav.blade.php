@@ -492,14 +492,14 @@
                 </li>
                 @endif
                 
-                <!--@if(can_access('logo-favicon'))-->
-                <!--<li class="sidebar-menu-item {{menuActive('admin.setting.logo.icon')}}">-->
-                <!--    <a href="{{route('admin.setting.logo.icon')}}" class="nav-link">-->
-                <!--        <i class="menu-icon las la-images"></i>-->
-                <!--        <span class="menu-title">@lang('Logo & Favicon')</span>-->
-                <!--    </a>-->
-                <!--</li>-->
-                <!--@endif-->
+                @if(can_access('logo-favicon'))
+                <li class="sidebar-menu-item {{menuActive('admin.setting.logo.icon')}}">
+                    <a href="{{route('admin.setting.logo.icon')}}" class="nav-link">
+                        <i class="menu-icon las la-images"></i>
+                        <span class="menu-title">@lang('Logo & Favicon')</span>
+                    </a>
+                </li>
+                @endif
                 
                  @if(can_access('language'))
                     <li class="sidebar-menu-item  {{menuActive(['admin.language.manage','admin.language.key'])}}">
@@ -519,42 +519,42 @@
                     </a>
                 </li>
                 @endif
-                <!--@if(can_access('notification-setting'))-->
-                <!--<li class="sidebar-menu-item sidebar-dropdown">-->
-                <!--    <a href="javascript:void(0)" class="{{menuActive('admin.setting.notification*',3)}}">-->
-                <!--        <i class="menu-icon las la-bell"></i>-->
-                <!--        <span class="menu-title">@lang('Notification Setting')</span>-->
-                <!--    </a>-->
-                <!--    <div class="sidebar-submenu {{menuActive('admin.setting.notification*',2)}} ">-->
-                <!--        <ul>-->
-                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.global')}} ">-->
-                <!--                <a href="{{route('admin.setting.notification.global')}}" class="nav-link">-->
-                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
-                <!--                    <span class="menu-title">@lang('Global Template')</span>-->
-                <!--                </a>-->
-                <!--            </li>-->
-                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.email')}} ">-->
-                <!--                <a href="{{route('admin.setting.notification.email')}}" class="nav-link">-->
-                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
-                <!--                    <span class="menu-title">@lang('Email Setting')</span>-->
-                <!--                </a>-->
-                <!--            </li>-->
-                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.sms')}} ">-->
-                <!--                <a href="{{route('admin.setting.notification.sms')}}" class="nav-link">-->
-                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
-                <!--                    <span class="menu-title">@lang('SMS Setting')</span>-->
-                <!--                </a>-->
-                <!--            </li>-->
-                <!--            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.templates')}} ">-->
-                <!--                <a href="{{route('admin.setting.notification.templates')}}" class="nav-link">-->
-                <!--                    <i class="menu-icon las la-dot-circle"></i>-->
-                <!--                    <span class="menu-title">@lang('Notification Templates')</span>-->
-                <!--                </a>-->
-                <!--            </li>-->
-                <!--        </ul>-->
-                <!--    </div>-->
-                <!--</li>-->
-                <!--@endif-->
+                @if(can_access('notification-setting'))
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a href="javascript:void(0)" class="{{menuActive('admin.setting.notification*',3)}}">
+                        <i class="menu-icon las la-bell"></i>
+                        <span class="menu-title">@lang('Notification Setting')</span>
+                    </a>
+                    <div class="sidebar-submenu {{menuActive('admin.setting.notification*',2)}} ">
+                        <ul>
+                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.global')}} ">
+                                <a href="{{route('admin.setting.notification.global')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Global Template')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.email')}} ">
+                                <a href="{{route('admin.setting.notification.email')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Email Setting')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.sms')}} ">
+                                <a href="{{route('admin.setting.notification.sms')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('SMS Setting')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item {{menuActive('admin.setting.notification.templates')}} ">
+                                <a href="{{route('admin.setting.notification.templates')}}" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Notification Templates')</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                @endif
 
                 
                 @if(can_access('manage-section'))
