@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Http;
 function systemDetails()
 {
     $system['name'] = 'vinance';
-    $system['version'] = '1.3';
+    $system['version'] = '2.1';
     $system['build_version'] = '4.4.8';
     return $system;
 }

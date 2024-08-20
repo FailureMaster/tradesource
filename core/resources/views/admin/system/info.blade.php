@@ -6,11 +6,11 @@
               <div class="card-body p-0">
                 <ul class="list-group">
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                    <span>Investingprof Version</span>
+                    <span>Sputnik22 Version</span>
                     <span>{{ systemDetails()['version'] }}</span>
                   </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                        <span>@lang('Investingprof Admin Version')</span>
+                        <span>@lang('Sputnik22 Admin Version')</span>
                         <span>{{ systemDetails()['build_version'] }}</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
