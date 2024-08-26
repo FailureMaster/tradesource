@@ -19,7 +19,7 @@
                                 <div class="image-upload">
                                     <div class="thumb">
                                         <div class="avatar-preview">
-                                            <div class="profilePicPreview logoPicPrev bg--dark" style="background-image: url({{ siteLogo() . '?' . time() }})">
+                                            <div class="profilePicPreview logoPicPrev bg--dark" style="background-image: url({{ siteLogo() . '?v=' . time() }})">
                                                 <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                             </div>
 
@@ -36,7 +36,7 @@
                                 <div class="image-upload">
                                     <div class="thumb">
                                         <div class="avatar-preview">
-                                            <div class="profilePicPreview logoPicPrev " style="background-color:#{{ $general->base_color }};background-image: url({{ getImage(getFilePath('logoIcon') . '/logo_base.png', '?' . time()) }})">
+                                            <div class="profilePicPreview logoPicPrev " style="background-color:#{{ $general->base_color }};background-image: url({{ getImage(getFilePath('logoIcon') . '/logo_base.png') }}?v={{time()}})">
                                                 <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                             </div>
                                         </div>
@@ -52,7 +52,7 @@
                                 <div class="image-upload">
                                     <div class="thumb">
                                         <div class="avatar-preview">
-                                            <div class="profilePicPreview logoPicPrev" style="background-image: url({{ siteFavicon() .'?' . time() }})">
+                                            <div class="profilePicPreview logoPicPrev" style="background-image: url({{ siteFavicon() .'?v=' . time() }})">
                                                 <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                 <div class="image-upload">
                                     <div class="thumb">
                                         <div class="avatar-preview">
-                                            <div class="profilePicPreview" style="background-image: url({{ getImage(getFilePath('logoIcon') . '/pwa_thumb.png', '?' . time()) }})">
+                                            <div class="profilePicPreview" style="background-image: url({{ getImage(getFilePath('logoIcon') . '/pwa_thumb.png') }}?v={{time()}})">
                                                 <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                             </div>
                                         </div>
@@ -86,7 +86,7 @@
                                 <div class="image-upload">
                                     <div class="thumb">
                                         <div class="avatar-preview">
-                                            <div class="profilePicPreview" style="background-image: url({{ getImage(getFilePath('logoIcon') . '/pwa_favicon.png', '?' . time()) }})">
+                                            <div class="profilePicPreview" style="background-image: url({{ getImage(getFilePath('logoIcon') . '/pwa_favicon.png') }}?v={{time()}})">
                                                 <button type="button" class="remove-image"><i class="fa fa-times"></i></button>
                                             </div>
                                         </div>

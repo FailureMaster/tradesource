@@ -8,6 +8,7 @@ use App\Constants\Status;
 use Illuminate\Http\Request;
 use App\Rules\FileTypeValidate;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Artisan;
 
 class GeneralSettingController extends Controller
 {
@@ -301,7 +302,7 @@ class GeneralSettingController extends Controller
     {
         try {
             $path = getFilePath('logoIcon');
-
+            
             if (!file_exists($path)) {
                 mkdir($path, 0755, true);
             }
@@ -312,6 +313,11 @@ class GeneralSettingController extends Controller
                 $image->resize($size[0], $size[1]);
             }
             $image->save($path . "/$fileName.png");
+            Artisan::call('optimize:clear');
+            Artisan::call('cache:clear');
+            Artisan::call('view:clear');
+            Artisan::call('config:clear');
+            Artisan::call('route:clear');
         } catch (\Exception $exp) {
             return back()->withErrors(["Couldn\'t upload the $fileName"]);
         }

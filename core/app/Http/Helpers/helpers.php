@@ -21,6 +21,7 @@ use App\Models\Transaction;
 use App\Models\Wallet;
 use App\Notify\Notify;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 
@@ -76,8 +77,15 @@ function activeTemplateName()
 
 function siteLogo($type = null)
 {
-    $name = $type ? "/logo_$type.png" : '/app_logo.png';
-    return getImage(getFilePath('logoIcon') . $name);
+    $ext    = ['jpg', 'png', 'jpg'];
+    $path   = getFilePath('logoIcon'). "/app_logo.png";
+    foreach ($ext as  $value) {
+        if (File::exists(getFilePath('logoIcon'). "/logo.".$value) ) {
+           $path = getFilePath('logoIcon'). "/logo.".$value;
+           break;
+        }
+    }
+    return getImage($path);
 }
 
 function siteFavicon()
