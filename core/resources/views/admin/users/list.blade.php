@@ -393,8 +393,8 @@
                                         @endif
 
                                         @php
-                                            if ($user->comments->last() != null && $user->comments->last()->comment != null && $user->comments->last()->commentor != null)
-                                                $commentvar = $user->comments->last()->comment ."-". $user->comments->last()->commentor->name;
+                                            if ($user->comments->last() != null && $user->comments->last()->comment != null)
+                                                $commentvar = $user->comments->last()->comment ."-". (isset($user->comments->last()->commentor->name) ? $user->comments->last()->commentor->name : 'User Deleted');
                                             else
                                                 $commentvar = 'No comment';
                                         @endphp
