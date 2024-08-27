@@ -152,6 +152,7 @@ Route::middleware('admin')->withoutMiddleware([LanguageMiddleware::class])->grou
 
         Route::post('{user}', 'destroy')->name('delete');
         Route::post('bulk/update', 'bulkRecordUpdate')->name('bulk.record.update');
+        Route::post('bulk/delete', 'bulkRecordDelete')->name('bulk.record.delete');
     });
 
     // Subscriber

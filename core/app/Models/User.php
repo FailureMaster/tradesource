@@ -10,10 +10,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Wallet;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, Searchable, UserNotify;
+    use HasApiTokens, Searchable, UserNotify, SoftDeletes;
 
     protected $guarded = [];
 
@@ -29,6 +30,8 @@ class User extends Authenticatable
         'balance',
         'kyc_data'
     ];
+
+    protected $dates = ['deleted_at'];
 
     /**
      * The attributes that should be cast to native types.

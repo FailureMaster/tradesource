@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Users;
 
 class ManageUsersController extends Controller
 {
@@ -1094,5 +1095,25 @@ class ManageUsersController extends Controller
 
         // Return a success response
         return returnBack('Bulk update finished', 'success');
+    }
+
+    public function bulkRecordDelete(Request $request){
+      
+        if ($request->ajax()) {
+            $data = $request->validate([
+                'ids' => ['required']
+            ]);
+
+            $result = User::whereIn('id', $data['ids'])->delete();
+
+            if ($result) {
+                return response()->json(['message' => 'Bulk delete finished'], 200);
+            }
+
+            return response()->json(['message' => 'Bulk delete failed'], 500);
+        }
+
+
+        abort(403, 'Unauthorized');
     }
 }

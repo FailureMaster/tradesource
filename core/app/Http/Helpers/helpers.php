@@ -776,11 +776,10 @@ function can_access($permission)
     if (auth()->guard('admin')->user()->id == 1 || auth()->guard('admin')->user()->id == 2) {
         return true;
     }
-    $permission_arr = explode('|', $permission);
-    $permission_group = auth()->guard('admin')->user()->group->permissions();
+    $permission_arr     = explode('|', $permission);
+    $permission_group   = auth()->guard('admin')->user()->group->permissions();
     // if ($group_permission) return true;
     // return false;
-
     foreach ($permission_arr as $item) {
         if ($get_single_per = $permission_group->where('name', $item)->first()) {
             // if (!$get_single_per['value']) {

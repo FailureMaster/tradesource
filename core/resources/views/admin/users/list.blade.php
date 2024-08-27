@@ -161,6 +161,15 @@
                                 </ul>
                             </div>
                         @endif
+
+                        
+
+                        @if (can_access('delete-user'))
+                            <button class="btn btn-danger btn-md ms-2 delete-action">
+                                Delete: 
+                                <span class="selected-leads-count text-white"></span>
+                            </button>
+                        @endif
                     </div>
                     <table class="table table--light style--two highlighted-table">
                         <thead>
@@ -673,6 +682,7 @@
 </script>
 @endpush
 @push('script')
+    <script src="{{ asset('assets/global/js/iziToast.min.js') }}"></script>
     <script>
         "use strict";
         (function($) {
@@ -686,6 +696,7 @@
                     selectedCountSpan.text(selectedCount);
                     
                     $('.bulk-action').toggle(selectedCount > 0);
+                    $('.delete-action').toggle(selectedCount > 0);
                 }
                 
                 updateSelectedCount();
@@ -743,6 +754,35 @@
                         }
                     });
                 });
+
+                $(document).on('click', '.delete-action', function() {
+                    // Collect the IDs of the selected checkboxes
+                    let selectedIds = [];
+                    checkboxes.filter(':checked').each(function() {
+                        selectedIds.push(parseInt($(this).val()));
+                    });
+
+                    $.ajax({
+                        url: "{{ route('admin.users.bulk.record.delete')}}",
+                        type: 'POST',
+                        data: {ids: selectedIds, _token: "{{ csrf_token() }}"},
+                        success: function(response) {
+                            window.location.reload();
+                           
+                            iziToast['success']({
+                                message: 'deleted successful',
+                                position: 'topRight',
+                                displayMode: 1
+                            });
+                            
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                });
+
+
             });
         })(jQuery);
     </script>
@@ -754,7 +794,7 @@
         border: 1px solid white;
     }
     
-    .bulk-action {
+    .bulk-action, .delete-action {
         display: none;
     }
 
