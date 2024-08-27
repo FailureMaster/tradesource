@@ -139,20 +139,22 @@
                                             </select>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div>
-                                            <label>@lang('Account Type')</label>
-                                            <select class="account_type w-100">
-                                                <option value="">@lang('Select One')</option>
-                                                <option value="demo">
-                                                    Demo
-                                                </option>
-                                                <option value="demo">
-                                                    Real
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </li>
+                                    @if (can_access('change-user-type'))
+                                        <li>
+                                            <div>
+                                                <label>@lang('Account Type')</label>
+                                                <select class="account_type w-100">
+                                                    <option value="">@lang('Select One')</option>
+                                                    <option value="demo">
+                                                        Demo
+                                                    </option>
+                                                    <option value="real">
+                                                        Real
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </li>
+                                    @endif
                                     <li>
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-primary w-100" id="submitBtn">Submit</button>
