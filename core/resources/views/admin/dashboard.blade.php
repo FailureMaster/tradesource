@@ -203,41 +203,27 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 d-flex align-items-center">
+                    <div class="col-lg-3 d-flex flex-column align-items-center justify-content-center">
                         <canvas id="pair-chart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!--<div class="col-lg-4">-->
-    <!--    <div class="row gy-4">-->
-            
-    <!--        <div class="col-12 ">-->
-                
-    <!--        </div>-->
-            
-
-    <!--        <div class="col-12">-->
-                
-    <!--        </div><!-- dashboard-w1 end -->-->
-    <!--    </div>-->
-    <!--</div>-->
 </div>
 @endif
 @if(can_access('report'))
 <div class="row mb-none-30 mt-5">
     <div class="col-xl-4 col-lg-6 mb-30">
         <div class="card overflow-hidden">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center" >
                 <h5 class="card-title">@lang('Login By Browser') (@lang('Last 30 days'))</h5>
-                <canvas id="userBrowserChart"></canvas>
+                <canvas id="userBrowserChart" class=""></canvas>
             </div>
         </div>
     </div>
     <div class="col-xl-4 col-lg-6 mb-30">
-        <div class="card">
+        <div class="card d-flex flex-column align-items-center justify-content-center">
             <div class="card-body">
                 <h5 class="card-title">@lang('Login By OS') (@lang('Last 30 days'))</h5>
                 <canvas id="userOsChart"></canvas>
@@ -246,7 +232,7 @@
     </div>
     <div class="col-xl-4 col-lg-6 mb-30">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body d-flex flex-column align-items-center justify-content-center">
                 <h5 class="card-title">@lang('Login By Country') (@lang('Last 30 days'))</h5>
                 <canvas id="userCountryChart"></canvas>
             </div>
@@ -806,6 +792,11 @@ $lastCron = Carbon\Carbon::parse($general->last_cron)->diffInSeconds();
         max-height: 300px;
         overflow-y: auto;
         margin-bottom: 1.5rem;
+    }
+
+    canvas{
+        width: 195px !important;
+        height: 160px !important
     }
 </style>
 @endpush
