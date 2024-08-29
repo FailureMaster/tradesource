@@ -142,21 +142,23 @@
         </div>
 
         <div class="d-flex flex-wrap gap-3 mt-4">
-            <div class="flex-fill">
-                <button data-bs-toggle="modal" data-bs-target="#addSubModal"
-                    class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-act="add"
-                    {{can_access("add-remove-user-balance") ? "" : "disabled" }}>
-                    <i class="las la-plus-circle"></i> @lang('Balance')
-                </button>
-            </div>
-
-            <div class="flex-fill">
-                <button data-bs-toggle="modal" data-bs-target="#addSubModal"
-                    class="btn btn--danger btn--shadow w-100 btn-lg bal-btn" data-act="sub"
-                    {{can_access("add-remove-user-balance") ? "" : "disabled" }}>
-                    <i class="las la-minus-circle"></i> @lang('Balance')
-                </button>
-            </div>
+            @if (can_access("add-remove-user-balance"))
+                <div class="flex-fill">
+                    <button data-bs-toggle="modal" data-bs-target="#addSubModal"
+                        class="btn btn--success btn--shadow w-100 btn-lg bal-btn" data-act="add"
+                        {{can_access("add-remove-user-balance") }}>
+                        <i class="las la-plus-circle"></i> @lang('Balance')
+                    </button>
+                </div>
+            @endif
+            @if (can_access("add-remove-user-balance"))
+                <div class="flex-fill">
+                    <button data-bs-toggle="modal" data-bs-target="#addSubModal"
+                        class="btn btn--danger btn--shadow w-100 btn-lg bal-btn" data-act="sub">
+                        <i class="las la-minus-circle"></i> @lang('Balance')
+                    </button>
+                </div>
+            @endif
 
             <div class="flex-fill">
                 <a href="{{route('admin.report.login.history')}}?lead_code={{ $user->lead_code }}"
