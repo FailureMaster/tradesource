@@ -266,6 +266,12 @@ class PermissionGroupController extends Controller
         'group' => $group[1],
         'value' => false,
       ],
+      [
+        "name" => "notification-to-all",
+        "label" => "Notification to all",
+        "group" => "Post Management",
+        "value" => false
+      ]
     ]);
     return $collect;
   }
@@ -308,9 +314,11 @@ class PermissionGroupController extends Controller
 
   public function edit($id)
   {
+    // dump($id);
     $pageTitle = 'User Group edit';
     $group = PermissionGroup::findOrFail($id);
     $permission = $this->getPermissionCollection()->map(function ($item, $key) use ($group) {
+     
       $value = false;
       if ($per = $group->permissions()->where('name', $item['name'])->first()) {
         $value = $per['value'];
@@ -318,7 +326,7 @@ class PermissionGroupController extends Controller
       $item['value'] = $value;
       return $item;
     });
-
+    // dd($permission);
     if (auth()->guard('admin')->user()->id != 1) {
         $permission = $permission->filter(function ($permission) {
             return $permission['value'] === true;
@@ -330,6 +338,7 @@ class PermissionGroupController extends Controller
 
   public function update(Request $request, $id)
   {
+
     // This function Updates existing user group
     $this->validate($request, [
       'name' => 'required',

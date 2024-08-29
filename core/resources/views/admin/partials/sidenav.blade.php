@@ -236,12 +236,14 @@
                                     <span class="menu-title">@lang('All Users')</span>
                                 </a>
                             </li> --}}
-                            <li class="sidebar-menu-item {{menuActive('admin.users.notification.all')}}">
-                                <a href="{{route('admin.users.notification.all')}}" class="nav-link">
-                                    <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Notification to All')</span>
-                                </a>
-                            </li>
+                            @if(can_access('notification-to-all'))
+                                <li class="sidebar-menu-item {{menuActive('admin.users.notification.all')}}">
+                                    <a href="{{route('admin.users.notification.all')}}" class="nav-link">
+                                        <i class="menu-icon las la-dot-circle"></i>
+                                        <span class="menu-title">@lang('Notification to All')</span>
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </li>
