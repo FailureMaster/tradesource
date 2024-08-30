@@ -271,6 +271,12 @@ class PermissionGroupController extends Controller
         "label" => "Notification to all",
         "group" => "Post Management",
         "value" => false
+      ],
+      [
+        "name" => "banned-user",
+        "label" => "Banned user",
+        "group" => "Post Management",
+        "value" => false
       ]
     ]);
     return $collect;
